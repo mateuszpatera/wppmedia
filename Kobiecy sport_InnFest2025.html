@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sport Kobiecy: Narodziny Legend</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<style>
+    :root {
+        --wpp-lime-green: #B0F467;
+        --wpp-navy: #000050;
+        --cornflower-blue: #5465FF;
+        --white: #FFFFFF;
+        --background-light: #f8f9fa;
+    }
+    body { font-family: 'Poppins', 'Arial', sans-serif; margin: 0; padding: 0; background-color: var(--background-light); color: var(--wpp-navy); }
+    section { 
+        min-height: 100vh; 
+        display: flex; 
+        flex-direction: column; 
+        justify-content: center; 
+        align-items: center; 
+        padding: 2rem 4%; 
+        box-sizing: border-box; 
+        background-color: var(--white);
+        border-bottom: 1px solid #e0e0e0;
+        position: relative;
+    }
+    .slide-content { display: flex; align-items: center; justify-content: center; width: 100%; max-width: 1600px; gap: 3rem; }
+    .left-column { flex: 1; min-width: 0; }
+    .right-column { flex: 1; text-align: left; }
+    .insight-box { background-color: rgba(248, 249, 250, 0.9); border-left: 5px solid var(--wpp-lime-green); padding: 1.5rem; border-radius: 8px; }
+    .insight-box h3 { margin-top: 0; color: var(--wpp-navy); font-size: 1.8rem; }
+    .insight-box p { font-size: 1.1rem; color: #343a40; }
+    h2 { font-size: 2.8rem; font-weight: 700; color: var(--wpp-navy); margin-bottom: 1rem; text-align: center; width: 100%; }
+    p.subtitle { font-size: 1.2rem; color: #6c757d; max-width: 800px; text-align: center; margin-bottom: 2.5rem; }
+    
+    /* Nowe style dla slajdów brandowanych */
+    .branded-slide {
+        background-size: cover;
+        background-position: center;
+    }
+    .title-slide {
+        background-image: url('https://media.licdn.com/dms/image/v2/D4E22AQHYQ6MocdGtJg/feedshare-shrink_800/B4EZh.3fMBHEAg-/0/1754475132535?e=2147483647&v=beta&t=OHIIQawji2W_I_mUs6FvtdmJMOQwmebwW2LRk0RkWCY');
+    }
+    .title-card {
+        background-color: var(--white);
+        color: var(--wpp-navy);
+        border-radius: 20px;
+        padding: 3rem 4rem;
+        width: 60%;
+        max-width: 900px;
+        text-align: center;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+    .title-card h1 {
+        font-size: 4rem;
+        color: var(--wpp-navy);
+        margin: 0;
+    }
+    .title-card p {
+        font-size: 1.5rem;
+        color: #6c757d;
+        margin-top: 1rem;
+        margin-bottom: 0;
+    }
+
+    .final-slide {
+        background-image: url('https://media.licdn.com/dms/image/v2/D4E22AQHYQ6MocdGtJg/feedshare-shrink_800/B4EZh.3fMBHEAg-/0/1754475132535?e=2147483647&v=beta&t=OHIIQawji2W_I_mUs6FvtdmJMOQwmebwW2LRk0RkWCY');
+        justify-content: center;
+        align-items: flex-start;
+    }
+    .final-card {
+        background-color: var(--white);
+        color: var(--wpp-navy);
+        border-radius: 20px;
+        padding: 3rem;
+        width: 40%;
+        max-width: 600px;
+        margin-top: 15vh;
+        margin-right: 45vw;
+        text-align: left;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+    .final-card h2 {
+        font-size: 2.5rem;
+        text-align: left;
+    }
+    .final-card .signature {
+        position: static;
+        margin-top: 2rem;
+        font-size: 1rem;
+        line-height: 1.5;
+    }
+</style>
+</head>
+<body>
+
+<section class="branded-slide title-slide">
+    <div class="title-card">
+        <h1>Sport Kobiecy:<br>Narodziny Legend</h1>
+        <p>Jak autentyczność i determinacja sportsmenek tworzą fundament pod przyszłe ikony marketingu.</p>
+    </div>
+</section>
+
+<section>
+    <h2>Mapa Percepcji: Horyzont Możliwości</h2>
+    <div class="slide-content">
+        <div class="left-column" id="clutterPlot"></div>
+        <div class="right-column"><div class="insight-box"><h3>Potencjał Czekający na Odkrycie</h3><p>Sportsmenki (zielony bąbel) znajdują się w "słodkim punkcie": mają najwyższy wskaźnik sympatii (<strong>Likeability: 107.6</strong>) spośród wszystkich grup, przy wciąż rosnącym zasięgu (Awareness: 21.3%). To idealny moment na inwestycję, zanim staną się ikonami głównego nurtu.</p></div></div>
+    </div>
+</section>
+
+<section>
+    <h2>Lejek Wpływu: Nokaut w Pierwszej Rundzie</h2>
+    <div class="slide-content">
+        <div class="left-column" id="funnelChart"></div>
+        <div class="right-column"><div class="insight-box"><h3>Jakość, Nie Ilość</h3><p>Świadomość wizerunku sportsmenki jest świadomością aktywną. Prawie 99% osób, które je znają, poświęca im realną uwagę. U mężczyzn ten wskaźnik to zaledwie 48%. To gwarancja dotarcia do publiczności, która naprawdę słucha.</p></div></div>
+    </div>
+</section>
+
+<section>
+    <h2>DNA Legendy: Fundament Wiarygodności vs Rynek</h2>
+    <div class="slide-content">
+        <div class="left-column" id="radarDNA"></div>
+        <div class="right-column"><div class="insight-box"><h3>Tarcza Przeciw Nieufności</h3><p>W erze kryzysu zaufania, sportsmenki (zielona linia) stanowią bezpieczną przystań. Ich wskaźniki autentyczności (110.3) i wiarygodności (106.3) deklasują średnie dla całych branż rozrywkowych, takich jak film czy muzyka.</p></div></div>
+    </div>
+</section>
+
+<section>
+    <h2>Siła Charakteru: DNA Zwycięzcy</h2>
+    <div class="slide-content">
+        <div class="left-column" id="barChartCharacter"></div>
+        <div class="right-column"><div class="insight-box"><h3>Dźwignia Wizerunku</h3><p>W atrybutach definiujących charakter i determinację, sportsmenki deklasują inne branże. To ich "DNA", które stanowi potężną dźwignię do budowania wizerunku nie tylko "atletki", ale "trendsetterki" w obszarze stylu życia, motywacji i przekraczania granic.</p></div></div>
+    </div>
+</section>
+
+<section>
+    <h2>Atrakcyjność: Autentyczna, Nie Jednowymiarowa</h2>
+    <div class="slide-content">
+        <div class="left-column" id="barChartAttractive"></div>
+        <div class="right-column"><div class="insight-box"><h3>Atrakcyjność to Kontekst</h3><p>Sportsmenki (104.4) są postrzegane jako atrakcyjne, choć nie dominują w tej kategorii jak gwiazdy filmu (113.0) czy mody (107.8). Ich atrakcyjność jest częścią szerszego, autentycznego wizerunku opartego na sile i zdrowiu, a nie jedynym atrybutem.</p></div></div>
+    </div>
+</section>
+
+<section>
+    <h2>Wiarygodność w Sprawach Ważnych</h2>
+    <div class="slide-content">
+        <div class="left-column" id="barChartCredible"></div>
+        <div class="right-column"><div class="insight-box"><h3>Bardziej Ludzki Wymiar Sportu</h3><p>Sportsmenki są postrzegane jako znacznie bardziej wiarygodne w działaniach prospołecznych i ekologicznych niż ich męscy odpowiednicy. Ich zaangażowanie w sprawy ważne jest odbierane jako bardziej szczere, co buduje głębszą, emocjonalną więź z odbiorcami.</p></div></div>
+    </div>
+</section>
+
+<section>
+    <h2>Siła Bez Ryzyka: Bezpieczna Przystań dla Marki</h2>
+    <div class="slide-content">
+        <div class="left-column" id="barChartRisk"></div>
+        <div class="right-column"><div class="insight-box"><h3>Inwestycja o Niższym Ryzyku</h3><p>W dobie "cancel culture", sportsmenki są bezpieczniejszym wyborem. Ich wskaźniki kontrowersyjności i arogancji są znacznie niższe niż średnie dla innych branż rozrywkowych, co minimalizuje ryzyko kryzysów wizerunkowych.</p></div></div>
+    </div>
+</section>
+
+<section>
+    <h2>Mniej "Celebrytki", Więcej "Ambasadorki"</h2>
+    <div class="slide-content">
+        <div class="left-column" id="barChartBrandLink"></div>
+        <div class="right-column"><div class="insight-box"><h3>Inwestycja w Wiarygodność</h3><p>Wybierając sportsmenkę, marketer nie przepłaca za "pustą" sławę. Inwestuje w kogoś, kogo publiczność postrzega jako bardziej autentycznego i naturalnego partnera dla marki niż przeciętny aktor. To przepis na kampanię o wyższym ROI.</p></div></div>
+    </div>
+</section>
+
+<section>
+    <h2>Efekt "Wow": Pozytywna Energia</h2>
+    <div class="slide-content">
+        <div class="left-column" id="radarEnergy"></div>
+        <div class="right-column"><div class="insight-box"><h3>Emocjonalna Wartość Dodana</h3><p>Sportsmenki (zielona linia) wyraźnie przewyższają mężczyzn w generowaniu pozytywnej energii (108.4 vs 98.4) i byciu postrzeganymi jako osoby opiekuńcze (102.6 vs 95.9). To kapitał, który pozwala markom budować cieplejszy i bardziej ludzki wizerunek.</p></div></div>
+    </div>
+</section>
+
+<section class="branded-slide final-slide">
+    <div class="final-card">
+        <h2>Czy Jesteśmy Gotowi na Narodziny Legend?</h2>
+        <p>Jakie kroki musi podjąć polski marketing, aby w pełni wykorzystać potencjał, który drzemie w sporcie kobiecym?</p>
+        <div class="signature">
+            <strong>Mateusz Patera</strong><br>
+            Senior Research Specialist<br>
+            mateusz.patera@wppmedia.com
+        </div>
+    </div>
+</section>
+
+<script>
+const wppColors = { lime: '#B0F467', navy: '#000050', cornflower: '#5465FF', periwinkle: '#788BFF', teal: '#00DBEE', yellow: '#FCFE67', lightBlue: '#93DFE3' };
+const plotLayout = { 
+    font: { family: 'Poppins, Arial', color: wppColors.navy }, 
+    plot_bgcolor: 'rgba(255, 255, 255, 0)', 
+    paper_bgcolor: 'rgba(255, 255, 255, 0)', 
+    legend: { orientation: 'h', yanchor: 'bottom', y: -0.3, xanchor: 'center', x: 0.5 } 
+};
+
+// Slajd 2: Mapa Percepcji
+var clutterData = [{ x: [21.3, 39.7, 46.7, 49.4, 42.4, 12.0, 9.7], y: [107.6, 99.0, 101.1, 95.4, 93.1, 99.8, 103.0], text: ["Sport Kobiety", "Sport Mężczyźni", "Kobiety Film", "Kobiety TV", "Kobiety Music", "Kobiety Fashion", "Kobiety Lifestyle"], mode: 'markers+text', marker: { size: [99.9, 98.9, 105.4, 108.1, 101.0, 97.2, 97.5], sizeref: 2, sizemode: 'diameter', color: [wppColors.lime, wppColors.navy, wppColors.cornflower, wppColors.periwinkle, wppColors.teal, wppColors.yellow, wppColors.lightBlue] }, textposition: 'top center' }];
+var clutterLayout = { ...plotLayout, title: 'Mapa Percepcji Gwiazd', xaxis: { title: 'Awareness (%) - Zasięg' }, yaxis: { title: 'Likeability - Sympatia' }, showlegend: false };
+Plotly.newPlot('clutterPlot', clutterData, clutterLayout, {responsive: true});
+
+// Slajd 3: Lejek Wpływu
+var funnelData = [ { name: 'Sport Kobiety', type: 'funnel', y: ["Zasięg", "Uwaga", "Ekspert", "Wpływ"], x: [21.3, 21.0, 13.9, 10.4], textinfo: "value+percent initial", marker: { color: wppColors.lime } }, { name: 'Sport Mężczyźni', type: 'funnel', y: ["Zasięg", "Uwaga", "Ekspert", "Wpływ"], x: [39.7, 19.1, 12.4, 9.0], textinfo: "value+percent initial", marker: { color: wppColors.navy } } ];
+var funnelLayout = { ...plotLayout, title: 'Lejek Wpływu: Porównanie Efektywności', margin: { l: 50, r: 50, t: 50, b: 50 } };
+Plotly.newPlot('funnelChart', funnelData, funnelLayout, {responsive: true});
+
+// Slajd 4: DNA Legendy
+var radarDNAData = [ { type: 'scatterpolar', r: [110.3, 106.3, 107.6], theta: ['Authentic', 'Reliability', 'Likeability'], fill: 'toself', name: 'Sport Kobiety', line: { color: wppColors.lime } }, { type: 'scatterpolar', r: [104.9, 104.5, 102.7], theta: ['Authentic', 'Reliability', 'Likeability'], fill: 'toself', name: 'Film (ALL)', line: { color: wppColors.cornflower } }, { type: 'scatterpolar', r: [105.0, 105.0, 96.2], theta: ['Authentic', 'Reliability', 'Likeability'], fill: 'toself', name: 'TV (ALL)', line: { color: wppColors.lightBlue } }, { type: 'scatterpolar', r: [98.3, 93.5, 93.3], theta: ['Authentic', 'Reliability', 'Likeability'], fill: 'toself', name: 'Music (ALL)', line: { color: wppColors.periwinkle } } ];
+var radarDNALayout = { ...plotLayout, title: 'DNA Legendy: Fundament Wiarygodności vs Rynek', polar: { radialaxis: { visible: true, range: [90, 115] } } };
+Plotly.newPlot('radarDNA', radarDNAData, radarDNALayout, {responsive: true});
+
+// Slajd 5: Siła Charakteru
+var barDataCharacter = [ { name: 'Sport Kobiety', x: ['Ambitious', 'Bold', 'Perfectionist', 'Health-oriented', 'Active'], y: [116.8, 118.8, 115.4, 126.6, 124.7], type: 'bar', marker: { color: wppColors.lime } }, { name: 'Średnia (Film, TV, Music)', x: ['Ambitious', 'Bold', 'Perfectionist', 'Health-oriented', 'Active'], y: [104.2, 100.7, 109.1, 104.3, 100.9], type: 'bar', marker: { color: wppColors.lightBlue } } ];
+var barLayoutCharacter = { ...plotLayout, barmode: 'group', title: 'Siła Charakteru: DNA Zwycięzcy' };
+Plotly.newPlot('barChartCharacter', barDataCharacter, barLayoutCharacter, {responsive: true});
+
+// Slajd 6: Atrakcyjność
+var barDataAttractive = [ { x: ['Sport Kobiety', 'Film Kobiety', 'TV Kobiety', 'Fashion&Beauty Kobiety'], y: [104.4, 113.0, 112.2, 107.8], type: 'bar', marker: { color: [wppColors.lime, wppColors.cornflower, wppColors.periwinkle, wppColors.teal] }, text: [104.4, 113.0, 112.2, 107.8], textposition: 'auto' } ];
+var barLayoutAttractive = { ...plotLayout, title: 'Atrakcyjność: Kontekst ma Znaczenie', yaxis: { title: 'Indeks "Attractive"' } };
+Plotly.newPlot('barChartAttractive', barDataAttractive, barLayoutAttractive, {responsive: true});
+
+// Slajd 7: Wiarygodność w Sprawach Ważnych
+var barDataCredible = [ { name: 'Sport Kobiety', x: ['Charity', 'Human rights', 'Environment', 'Animals'], y: [103.8, 101.8, 102.4, 99.3], type: 'bar', marker: { color: wppColors.lime } }, { name: 'Sport Mężczyźni', x: ['Charity', 'Human rights', 'Environment', 'Animals'], y: [100.7, 94.3, 89.7, 89.3], type: 'bar', marker: { color: wppColors.navy } } ];
+var barLayoutCredible = { ...plotLayout, barmode: 'group', title: 'Wiarygodność w Sprawach Ważnych', yaxis: { title: 'Indeks "Credible"' } };
+Plotly.newPlot('barChartCredible', barDataCredible, barLayoutCredible, {responsive: true});
+
+// Slajd 8: Siła Bez Ryzyka
+var barDataRisk = [ { name: 'Sport Kobiety', x: ['Controversial', 'Arrogant'], y: [95.5, 95.1], type: 'bar', marker: { color: wppColors.lime } }, { name: 'TV (ALL)', x: ['Controversial', 'Arrogant'], y: [100.3, 104.0], type: 'bar', marker: { color: wppColors.lightBlue } }, { name: 'Music (ALL)', x: ['Controversial', 'Arrogant'], y: [107.1, 101.3], type: 'bar', marker: { color: wppColors.periwinkle } } ];
+var barLayoutRisk = { ...plotLayout, barmode: 'group', title: 'Siła Bez Ryzyka (im niżej, tym lepiej)', yaxis: { title: 'Indeks' } };
+Plotly.newPlot('barChartRisk', barDataRisk, barLayoutRisk, {responsive: true});
+
+// Slajd 9: Ambasadorki vs Celebrytki
+var barDataBrandLink = [ { name: 'Celebrity Score', x: ['Sport Kobiety', 'Film (ALL)', 'TV (ALL)'], y: [99.4, 108.5, 108.7], type: 'bar', marker: { color: wppColors.lightBlue } }, { name: 'Brand Link', x: ['Sport Kobiety', 'Film (ALL)', 'TV (ALL)'], y: [104.4, 102.6, 105.3], type: 'bar', marker: { color: wppColors.lime } } ];
+var barLayoutBrandLink = { ...plotLayout, barmode: 'group', title: 'Siła Gwiazdy vs. Siła Dopasowania' };
+Plotly.newPlot('barChartBrandLink', barDataBrandLink, barLayoutBrandLink, {responsive: true});
+
+// Slajd 10: Pozytywna Energia
+var radarEnergyData = [ { type: 'scatterpolar', r: [108.4, 102.6, 96.7, 96.1], theta: ['Positive energy', 'Caring', 'Easy-going', 'Funny'], fill: 'toself', name: 'Sport Kobiety', line: { color: wppColors.lime } }, { type: 'scatterpolar', r: [98.4, 95.9, 99.9, 97.3], theta: ['Positive energy', 'Caring', 'Easy-going', 'Funny'], fill: 'toself', name: 'Sport Mężczyźni', line: { color: wppColors.navy } } ];
+var radarEnergyLayout = { ...plotLayout, title: 'Efekt "Wow": Pozytywna Energia', polar: { radialaxis: { visible: true, range: [90, 110] } } };
+Plotly.newPlot('radarEnergy', radarEnergyData, radarEnergyLayout, {responsive: true});
+
+</script>
+
+</body>
+</html>
